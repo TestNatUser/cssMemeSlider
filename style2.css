@@ -6,12 +6,9 @@ h1 {
   color: aliceblue;
 }
 .meme_container {
-  display: flex;
-  flex-direction: column;
   margin: auto;
-  width: 40em;
-  height: 40em;
-  justify-content: space-between;
+  width: 40vw;
+  height: 40vh;
 }
 .controls_container {
   display: flex;
@@ -21,18 +18,19 @@ h1 {
 }
 .images_container {
   margin: auto;
-  width: inherit;
-  height: 30em;
+  width: 30vh;
+  height: 30vh;
   background: white;
   overflow: hidden;
 }
 .images_container div {
   overflow: hidden;
-  width:400px;
+  width:inherit;
   height:inherit;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  visibility:hidden;
 }
 
 .images_container div:nth-of-type(1){
@@ -48,23 +46,17 @@ h1 {
     background-image: url("assets/Image4.jpg");
 }
 .labels_container {
-  display: flex;
-  flex-direction: column;
-  color: blanchedalmond;
+  color: white;
   overflow: hidden;
   height: 1em;
   z-index: 0;
   
 }
-.labels_container div{
-    display:inline-block;
-    /*transform: translateY(1em);
-    transition: transform ease-in-out .5s, opacity ease-in-out .5s;*/
-}
 .wrapper {
   margin-top: 1%;
   display: flex;
-  flex-direction: row-reverse;
+  width:inherit;
+  flex-direction: column;
   justify-content: space-between;
 }
 input {
@@ -77,29 +69,59 @@ input {
   cursor: pointer;
 }
 
+.labels_container div{
+  height:1vh;
+  visibility:hidden;
+}
+
 input:checked:nth-of-type(1) ~ .labels_container div:nth-of-type(1){
-    transform: translateY(-0.9em);
-    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  visibility:visible;
+  z-index:5;  
+  transition: transform ease-in-out .5s;
   }
   input:checked:nth-of-type(2) ~ .labels_container div:nth-of-type(2){
-    transform: translateY(-1.9em);
+    visibility:visible;
+    z-index:5;
+    transform: translateY(-1vh);
     transition: transform ease-in-out .5s, opacity ease-in-out .5s;
   }
 
 input:checked:nth-of-type(3) ~ .labels_container div:nth-of-type(3)
 {
-    transform: translateY(-2.9em);
+  visibility:visible;
+  z-index:5;
+    transform: translateY(-2vh);
     transition: transform ease-in-out .5s, opacity ease-in-out .5s;
   }
  
 input:checked:nth-of-type(4) ~ .labels_container div:nth-of-type(4){
-    transform: translateY(-3.9em);
+  visibility:visible;
+  z-index:5;  
+  transform: translateY(-3vh);
     transition: transform ease-in-out .5s, opacity ease-in-out .5s;
   }
 input:checked{
     border-color: white;
 }
-
+input:checked:nth-of-type(1) ~ .images_container div:nth-of-type(1){
+  visibility:visible;
+  transition: transform ease-in-out .5s;
+}
+input:checked:nth-of-type(2) ~ .images_container div:nth-of-type(2){
+  visibility:visible;
+  transform: translateY(-30vh);
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+input:checked:nth-of-type(3) ~ .images_container div:nth-of-type(3){
+  visibility:visible;
+  transform: translateY(-60vh);
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+input:checked:nth-of-type(4) ~ .images_container div:nth-of-type(4){
+  visibility:visible;
+  transform: translateY(-90vh);
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
 input:checked:hover{
   background: white;
   border-color: yellowgreen;
