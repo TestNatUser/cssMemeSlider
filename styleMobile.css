@@ -13,16 +13,15 @@ h1 {
   height: 80vh;
 }
 .controls_container {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .images_container {
   height:var(--imageHeight);
   background: white;
   overflow: hidden;
   background-color: white;
-  grid-column: span 2;
 }
 .images_container div {
   overflow: hidden;
@@ -55,8 +54,10 @@ h1 {
 }
 .wrapper {
   margin-top: 1%;
-  display: grid;
+  display: flex;
   width:inherit;
+  flex-direction: column;
+  justify-content: space-between;
 }
 input {
   display: none;
@@ -160,5 +161,5 @@ input:checked:nth-of-type(4) ~ .false_buttons label:nth-of-type(4){
 
 .false_buttons{
   display:inline;
-  justify-self: end;
+  align-self: flex-end;
 }
