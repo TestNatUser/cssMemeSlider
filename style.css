@@ -18,15 +18,10 @@ h1 {
   grid-template-columns: repeat(2,1fr);
   align-items: center;
 }
-@media screen and (min-width: 500px) and (max-width: 1023px){
-  .controls_container {
+@media only screen and (min-width: 500px) and (max-width: 1023px){
+  .controls_container  {
     grid-template-columns: 1fr;
   }
-}
-.controls_container {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  align-items: center;
 }
 .images_container {
   height:var(--imageHeight);
@@ -34,7 +29,7 @@ h1 {
   overflow: hidden;
   grid-column: span 2;
 }
-@media screen and (min-width: 500px) and (max-width: 1023px){
+@media only screen and (min-width: 500px) and (max-width: 1023px){
   .images_container {
     grid-column: 1;
   }
@@ -155,7 +150,7 @@ input:checked:nth-of-type(4) ~ .false_buttons label:nth-of-type(4){
   display:inline;
   justify-self: end;
 }
-@media screen and (min-width: 500px) and (max-width: 1023px){
+@media only screen and (min-width: 500px) and (max-width: 1023px){
   .false_buttons {
     justify-self: center;
     grid-row-start: 2;
