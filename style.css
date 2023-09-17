@@ -128,7 +128,6 @@ label{
   width: 1em;
 cursor: pointer;
 margin: 0.1em;
-padding:0.5em;
 box-sizing: border-box;
 display:inline-block;
 }
@@ -145,9 +144,9 @@ input:checked:nth-of-type(3) ~ .false_buttons label:nth-of-type(3),
 input:checked:nth-of-type(4) ~ .false_buttons label:nth-of-type(4){
   background: white;
 }
-
 .false_buttons{
-  display:inline;
+  display:flex;
+  gap:2vh;
   justify-self: end;
 }
 @media only screen and (min-width: 500px) and (max-width: 1023px){
